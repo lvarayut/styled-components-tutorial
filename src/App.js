@@ -2,13 +2,13 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 
 const Title = styled.h1`
-  color: goldenrod;
+  color: ${props => props.color ||  'goldenrod'}
 `;
 
 class App extends Component {
   render() {
     return (
-      <Title>Gallery Application</Title>
+      <Title color="wheat">Gallery Application</Title>
     );
   }
 }
