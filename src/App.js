@@ -17,14 +17,21 @@ const Thumbnail = styled.img`
   height: 250px;
   padding: 5px;
   margin: 15px;
-  border: 1px solid white;
-  border-radius: 8px;
+  ${props => {
+    if (props.showBorder) {
+      return `
+        border: 1px solid white;
+        border-radius: 8px;
+      `;
+    }
+  }}
 `;
 
 class App extends Component {
   render() {
     const thumbnails = Array.from({ length: 5 }, (_, index) => {
-      return <Thumbnail key={index + 1} src={require(`../assets/thumbnail-${index + 1}.jpeg`)} />;
+      const showBorder = index % 2 === 0;
+      return <Thumbnail key={index + 1} src={require(`../assets/thumbnail-${index + 1}.jpeg`)} showBorder={showBorder} />;
     });
 
     return (
