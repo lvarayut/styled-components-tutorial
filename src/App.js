@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 const Title = styled.h1`
   color: ${props => props.color ||  'goldenrod'};
@@ -11,12 +11,7 @@ const Gallery = styled.div`
   flex-wrap: wrap;
 `;
 
-const Thumbnail = styled.img`
-  flex-grow: 1;
-  width: 300px;
-  height: 250px;
-  padding: 5px;
-  margin: 15px;
+const border = css`
   ${props => {
     if (props.showBorder) {
       return `
@@ -25,6 +20,15 @@ const Thumbnail = styled.img`
       `;
     }
   }}
+`;
+
+const Thumbnail = styled.img`
+  flex-grow: 1;
+  width: 300px;
+  height: 250px;
+  padding: 5px;
+  margin: 15px;
+  ${border}
 `;
 
 class App extends Component {
