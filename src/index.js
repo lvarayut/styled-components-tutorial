@@ -13,6 +13,7 @@ ReactDOM.render(
 // eslint-disable-next-line
 injectGlobal`
   body {
+    background-color: ghostwhite;
     padding: 0;
     margin: 0;
     font-family: cursive;

@@ -1,9 +1,15 @@
 import React, { Component } from 'react';
 import styled, { css } from 'styled-components';
 
+const mainColor = 'indianred'
+
 const Title = styled.h1`
   color: ${props => props.color ||  'goldenrod'};
-  font-size: 2.5em;
+  font-size: 2.8em;
+  margin: 25px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid ${mainColor};
+  display: inline-block;
 `;
 
 const Gallery = styled.div`
@@ -15,7 +21,7 @@ const border = css`
   ${props => {
     if (props.showBorder) {
       return `
-        border: 1px solid white;
+        border: 1px solid ${mainColor};
         border-radius: 8px;
       `;
     }
@@ -40,7 +46,7 @@ class App extends Component {
 
     return (
       <div className={this.props.className}>
-        <Title color="wheat">Gallery Application</Title>
+        <Title color={mainColor}>Mystagram</Title>
         <Gallery>
           {thumbnails}
         </Gallery>
@@ -50,10 +56,8 @@ class App extends Component {
 }
 
 export default styled(App)`
-  background-color: chocolate;
   width: 100vw;
   height: 100vh;
   text-align: center;
-  padding-top: 30px;
 `;
 
